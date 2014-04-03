@@ -1,0 +1,36 @@
+{
+    "name": "qr-secret-decoder-ring",
+    "title": "QR Secret Decoder Ring",
+    "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM",
+    "version": "0.1.0",
+    "license": "MIT",
+    "author": "Brett Zamir",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brettz9/qr-secret-decoder-ring.git"
+    },
+    "description": "Right click an image containing a QR code to decode. Allows choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links. Currently does not work with local files.",
+    "keywords": [
+        "QR"
+    ],
+    "preferences": [
+        {
+            "description": "The site to handle QR Code decoding of right-clicked images. Note that MiniQR creates a public URL for your submitted QR.", 
+            "name": "decoderSite", 
+            "options": [
+                {
+                    "label": "MiniQR", 
+                    "value": "http://miniqr.com/api/read.php?url="
+                }, 
+                {
+                    "label": "ZXing", 
+                    "value": "http://zxing.org/w/decode?u="
+                }
+            ], 
+            "title": "Decoder Site", 
+            "type": "radio", 
+            "value": "http://zxing.org/w/decode?u="
+        }
+    ]
+}
