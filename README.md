@@ -10,8 +10,6 @@ optional URL resolution or link creation and error reporting.
 
 Note that MiniQR makes a public URL but conveniently converts URLs to links.
 
-Currently does not work with local files.
-
 # Possible to-dos
 1. Support image uploading
 1. Support POST
