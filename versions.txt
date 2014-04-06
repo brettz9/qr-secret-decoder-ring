@@ -1,5 +1,8 @@
+0.3.0
+* Support link creation for internal decoding
+
 0.2.0
-* Support QR-Logo-based decoding internally with optional URL resolution and error reporting
+* Support [QR-Logo](https://github.com/kaarposoft/qrlogo)-based decoding internally with optional URL resolution and error reporting
 * Support decoding of canvas-based QR codes (e.g., as produced by https://www.the-qrcode-generator.com/ )
 
 0.1.0

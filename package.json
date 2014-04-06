@@ -37,11 +37,25 @@
             "value": "http://zxing.org/w/decode?u="
         },
         {
-            "name": "autoResolveURLs",
-            "description": "Auto-resolve URLs when using internal decoder",
-            "title": "Internal decoder URL resolution",
-            "type": "bool",
-            "value": true
+            "name": "URLHandling",
+            "description": "How to handle URLs when using internal decoder",
+            "title": "URL handling with internal decoder",
+            "type": "radio",
+            "value": "resolve",
+            "options": [
+                {
+                    "label": "Resolve URLs",
+                    "value": "resolve"
+                },
+                {
+                    "label": "Convert URLs to links",
+                    "value": "toLink"
+                },
+                {
+                    "label": "Convert URLs to text",
+                    "value": "toText"
+                }
+            ]
         }
     ]
 }

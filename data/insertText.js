@@ -12,9 +12,15 @@ function insertError (errorMsg) { 'use strict';
     div.appendChild(document.createTextNode(errorMsg));
     document.body.appendChild(div);
 }
+
+function insertLink (text) { 'use strict';
+    var a = document.createElement('a');
+    a.href = text;
+    a.appendChild(document.createTextNode(text));
+    document.body.appendChild(a);
+}
+
 function insertText (text) { 'use strict';
-    
-    // document.body.appendChild(document.createTextNode(text));
     var textarea = document.createElement('textarea');
     textarea.autofocus = true;
     textarea.style.width = '100%';
