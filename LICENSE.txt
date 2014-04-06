@@ -1,3 +1,8 @@
+reedsolomon.js and qrcodedecode.js are under the Apache 2.0 license (and
+are unmodified from a version obtained at
+<https://github.com/kaarposoft/qrlogo>). All other files are also available
+under the MIT license as per below.
+-------------------------------
 The MIT License (MIT)
 
 Copyright (c) 2014 Brett Zamir

@@ -4,7 +4,13 @@
 (function () {'use strict';
 
 self.on('click', function (node, data) {
-    window.open(data + encodeURIComponent(node.src));
+    if (node.nodeName.toLowerCase() === 'canvas') {
+        self.postMessage(node.toDataURL());
+    }
+    else {
+        self.postMessage(node.src);
+    }
+    // window.open(data + encodeURIComponent(node.src));
 });
 
 }());

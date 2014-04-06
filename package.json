@@ -16,7 +16,7 @@
     ],
     "preferences": [
         {
-            "description": "The site to handle QR Code decoding of right-clicked images. Note that MiniQR creates a public URL for your submitted QR.", 
+            "description": "The site to handle QR Code decoding of right-clicked images or canvases (e.g., https://www.the-qrcode-generator.com/ ). Note that MiniQR creates a public URL for your submitted QR.",
             "name": "decoderSite", 
             "options": [
                 {
