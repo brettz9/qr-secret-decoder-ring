@@ -25,8 +25,13 @@ self.port.on('imgSrc', function (imgSrc) {
     // document.body.appendChild(canvas);
     getImageData(canvas, imgSrc, function (imagedata) {
         var qr = new QRCodeDecode();
-        var decoded = qr.decodeImageData(imagedata, canvas.width, canvas.height);
-        self.port.emit('decodedText', decoded);
+        try {
+            var decoded = qr.decodeImageData(imagedata, canvas.width, canvas.height);
+            self.port.emit('decodedText', decoded);
+        }
+        catch (e) {
+            self.port.emit('decodingError', e);
+        }
     });
 });
 

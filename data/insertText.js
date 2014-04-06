@@ -1,3 +1,17 @@
+function insertError (errorMsg) {
+    var div = document.createElement('div');
+    div.style.color = 'red';
+    div.appendChild(document.createTextNode('Error decoding QR code (Decoder obtained from '));
+    var a = document.createElement('a');
+    a.href = 'https://github.com/kaarposoft/qrlogo';
+    a.appendChild(document.createTextNode('QR-Logo'));
+    div.appendChild(a);
+    div.appendChild(document.createTextNode('):'));
+    div.appendChild(document.createElement('br'));
+    div.appendChild(document.createElement('br'));
+    div.appendChild(document.createTextNode(errorMsg));
+    document.body.appendChild(div);
+}
 function insertText (text) {
     
     // document.body.appendChild(document.createTextNode(text));
