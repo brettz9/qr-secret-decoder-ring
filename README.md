@@ -13,7 +13,7 @@ Note that MiniQR makes a public URL but conveniently converts URLs to links.
 Currently does not work with local files.
 
 # Possible to-dos
-1. Incorporate https://github.com/kaarposoft/qrlogo/blob/master/qrdecode.html
-to avoid site dependency
 1. Support image uploading
 1. Support POST
+1. Could i18n-ize errors, but would also need to modify qrcodedecode.js
+1. Add additional context menu items in place of preferences?
