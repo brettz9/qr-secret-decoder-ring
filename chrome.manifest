@@ -1,1 +1,2 @@
 content qr-secret-decoder-ring resources/qr-secret-decoder-ring/data/
+locale qr-secret-decoder-ring en-US resources/qr-secret-decoder-ring/locale/
