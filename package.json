@@ -10,15 +10,19 @@
         "type": "git",
         "url": "https://github.com/brettz9/qr-secret-decoder-ring.git"
     },
-    "description": "Right click an image containing a QR code to decode. Allows choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links. Currently does not work with local files.",
+    "description": "Right click an image or canvas (e.g., from https://www.the-qrcode-generator.com/ ) containing a QR code to decode. Allows choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links. Currently does not work with local files.",
     "keywords": [
         "QR"
     ],
     "preferences": [
         {
-            "description": "The site to handle QR Code decoding of right-clicked images or canvases (e.g., https://www.the-qrcode-generator.com/ ). Note that MiniQR creates a public URL for your submitted QR.",
+            "description": "The site to handle QR Code decoding of right-clicked images or canvases. Note that MiniQR creates a public URL for your submitted QR.",
             "name": "decoderSite", 
             "options": [
+                {
+                    "label": "QR Secret Decoder Ring Internal Decoder",
+                    "value": "internal"
+                },
                 {
                     "label": "MiniQR", 
                     "value": "http://miniqr.com/api/read.php?url="
@@ -31,6 +35,13 @@
             "title": "Decoder Site", 
             "type": "radio", 
             "value": "http://zxing.org/w/decode?u="
+        },
+        {
+            "name": "autoResolveURLs",
+            "description": "Auto-resolve URLs when using internal decoder",
+            "title": "Internal decoder URL resolution",
+            "type": "bool",
+            "value": true
         }
     ]
 }

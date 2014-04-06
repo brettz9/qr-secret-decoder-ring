@@ -10,7 +10,6 @@ self.on('click', function (node, data) {
     else {
         self.postMessage(node.src);
     }
-    // window.open(data + encodeURIComponent(node.src));
 });
 
 }());
