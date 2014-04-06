@@ -1,8 +1,8 @@
-function insertError (errorMsg) {
-    var div = document.createElement('div');
+function insertError (errorMsg) { 'use strict';
+    var a = document.createElement('a'),
+        div = document.createElement('div');
     div.style.color = 'red';
     div.appendChild(document.createTextNode('Error decoding QR code (Decoder obtained from '));
-    var a = document.createElement('a');
     a.href = 'https://github.com/kaarposoft/qrlogo';
     a.appendChild(document.createTextNode('QR-Logo'));
     div.appendChild(a);
@@ -12,7 +12,7 @@ function insertError (errorMsg) {
     div.appendChild(document.createTextNode(errorMsg));
     document.body.appendChild(div);
 }
-function insertText (text) {
+function insertText (text) { 'use strict';
     
     // document.body.appendChild(document.createTextNode(text));
     var textarea = document.createElement('textarea');
