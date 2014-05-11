@@ -1,5 +1,6 @@
 /*globals self, QRCodeDecode*/
 /*jslint vars: true*/
+// Todo: Somehow do for WebGL? ;)
 (function () {'use strict';
 
 /**
