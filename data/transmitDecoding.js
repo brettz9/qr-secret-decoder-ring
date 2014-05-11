@@ -3,12 +3,27 @@
 
 (function () {'use strict';
 
+var svgNS = 'http://www.w3.org/2000/svg';
 self.on('click', function (node, data) {
-    if (node.nodeName.toLowerCase() === 'canvas') {
-        self.postMessage(node.toDataURL());
-    }
-    else {
-        self.postMessage(node.src);
+    switch (node.nodeName.toLowerCase()) {
+        case 'svg':
+            self.postMessage(node.outerHTML);
+            break;
+        case 'canvas':
+            self.postMessage(node.toDataURL());
+            break;
+        default:
+            if (node.namespaceURI === svgNS) { // In case we are in a child of an SVG element, we probably need the whole SVG block
+                var lastElement = node;
+                while (node.namespaceURI === svgNS) {
+                    lastElement = node;
+                    node = node.parentNode;
+                }
+                self.postMessage(lastElement.outerHTML);
+                break;
+            }
+            self.postMessage(node.src);
+            break;
     }
 });
 

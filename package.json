@@ -2,7 +2,7 @@
     "name": "qr-secret-decoder-ring",
     "title": "QR Secret Decoder Ring",
     "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "license": "MIT",
     "author": "Brett Zamir",
     "contributors": [],
@@ -34,7 +34,7 @@
             ], 
             "title": "Decoder Site", 
             "type": "radio", 
-            "value": "http://zxing.org/w/decode?u="
+            "value": "internal"
         },
         {
             "name": "URLHandling",
