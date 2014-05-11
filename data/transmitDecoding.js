@@ -6,11 +6,11 @@
 var svgNS = 'http://www.w3.org/2000/svg';
 self.on('click', function (node, data) {
     switch (node.nodeName.toLowerCase()) {
-        case 'svg':
-            self.postMessage(node.outerHTML);
-            break;
         case 'canvas':
             self.postMessage(node.toDataURL());
+            break;
+        case 'video':
+            self.postMessage({videoSrc: node.src, currentTime: node.currentTime, videoWidth: node.videoWidth, videoHeight: node.videoHeight});
             break;
         default:
             if (node.namespaceURI === svgNS) { // In case we are in a child of an SVG element, we probably need the whole SVG block
@@ -22,6 +22,7 @@ self.on('click', function (node, data) {
                 self.postMessage(lastElement.outerHTML);
                 break;
             }
+            // Images
             self.postMessage(node.src);
             break;
     }
