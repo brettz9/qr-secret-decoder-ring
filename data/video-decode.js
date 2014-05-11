@@ -24,12 +24,12 @@ self.port.on('imgSrc', function (imgSrc) {
     //video.height = imgSrc.videoHeight;
     video.height = imgSrc.videoWidth; // Must be square, so we enforce
     video.src = imgSrc.videoSrc;
-    var alreadyRan = false;
-    video.addEventListener('seeked', function (e) { // Wait until current time frame loaded
-        if (alreadyRan) {
+    var alreadySeeked = false, alreadyCanPlay = false;
+    video.addEventListener('seeked', function () { // Wait until current time frame loaded
+        if (!alreadyCanPlay || alreadySeeked) {
             return;
         }
-        alreadyRan = true;
+        alreadySeeked = true;
         getImageData(canvas, video, function (imagedata) {
             var qr = new QRCodeDecode();
             try {
@@ -42,6 +42,10 @@ self.port.on('imgSrc', function (imgSrc) {
         });
     });
     video.addEventListener('canplay', function () {
+        if (alreadyCanPlay) {
+            return;
+        }
+        alreadyCanPlay = true;
         video.currentTime = imgSrc.currentTime;
     });
 });
