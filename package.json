@@ -10,7 +10,7 @@
         "type": "git",
         "url": "https://github.com/brettz9/qr-secret-decoder-ring.git"
     },
-    "description": "Right click an image or canvas (e.g., from https://www.the-qrcode-generator.com/ ) containing a QR code to decode. Allows choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links. Currently does not work with local files.",
+    "description": "Right click an image or canvas (e.g., from https://www.the-qrcode-generator.com/ ) containing a QR code to decode. Allows internal decoding (using QR-Logo) or the choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links.",
     "keywords": [
         "QR"
     ],
