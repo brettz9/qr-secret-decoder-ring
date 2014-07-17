@@ -4,6 +4,13 @@
 (function () {'use strict';
 
 var svgNS = 'http://www.w3.org/2000/svg';
+
+self.on('context', function (node) { // Node could be element of intended type or its children
+    return ['img','canvas','video'].indexOf(node.nodeName.toLowerCase()) > -1 ||
+        node.namespaceURI === svgNS ||
+        !!node.style.backgroundImage;
+});
+
 self.on('click', function (node, data) {
     switch (node.nodeName.toLowerCase()) {
         case 'canvas':
@@ -22,8 +29,10 @@ self.on('click', function (node, data) {
                 self.postMessage(lastElement.outerHTML);
                 break;
             }
-            // Images
-            self.postMessage(node.src);
+            self.postMessage(
+                node.src || // Images
+                node.style.backgroundImage.replace(/url\("(.*)"\)/, '$1') // background URLs
+            );
             break;
     }
 });
