@@ -2,7 +2,8 @@
 
 A restartless
 [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/qr-secret-decoder-ring/)
-which allows right clicking an image or canvas (e.g., from
+which allows right clicking an image (including a background image),
+SVG element, or canvas (e.g., from
 <https://www.the-qrcode-generator.com/>) containing a QR code to decode it.
 Allows choice of the ZXing and MiniQR websites for handling the decoding or
 [QR-Logo](https://github.com/kaarposoft/qrlogo)-based internal decoding with
