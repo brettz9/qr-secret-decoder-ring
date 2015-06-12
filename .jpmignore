@@ -1,2 +1,6 @@
-.bat
+*.xpi
+*.lnk
+*.git
+.jpmignore
 test
+doc
