@@ -1,8 +1,9 @@
 {
     "name": "qr-secret-decoder-ring",
     "title": "QR Secret Decoder Ring",
-    "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM",
+    "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack",
     "version": "0.5.0",
+    "main": "lib/main",
     "license": "MIT",
     "author": "Brett Zamir",
     "contributors": [],
