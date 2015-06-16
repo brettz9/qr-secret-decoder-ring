@@ -2,5 +2,6 @@
 *.lnk
 *.git
 .jpmignore
+.gitignore
 test
 doc
