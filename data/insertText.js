@@ -13,11 +13,27 @@ function insertError (errorMsg) { 'use strict';
     document.body.appendChild(div);
 }
 
+
+var link = /\bhttps?:.*?(?=\s|$)/;
+var textStart = 0;
 function insertLink (text) { 'use strict';
+    var start = text.search(link);
+    var match = text.match(link);
+    if (start === -1) {
+        document.body.appendChild(document.createTextNode(text));
+        return;
+    }
+
+    if (start) {
+        document.body.appendChild(document.createTextNode(text.slice(0, start)));
+    }
+
     var a = document.createElement('a');
-    a.href = text;
-    a.appendChild(document.createTextNode(text));
+    var linkText = match[0];
+    a.href = linkText;
+    a.appendChild(document.createTextNode(linkText));
     document.body.appendChild(a);
+    insertLink(text.slice(start + match[0].length));
 }
 
 function insertText (text) { 'use strict';
@@ -29,3 +45,12 @@ function insertText (text) { 'use strict';
     document.body.appendChild(textarea);
     textarea.setSelectionRange(0, textarea.value.length); // Not sure why select() is not working
 }
+
+var methods = {
+    insertError: insertError,
+    insertLink: insertLink,
+    insertText: insertText
+};
+
+
+methods[self.options.method](self.options.text);

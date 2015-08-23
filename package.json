@@ -2,7 +2,7 @@
     "name": "qr-secret-decoder-ring",
     "title": "QR Secret Decoder Ring",
     "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "main": "lib/main",
     "license": "MIT",
     "author": "Brett Zamir",
@@ -39,24 +39,27 @@
         },
         {
             "name": "URLHandling",
-            "description": "How to handle URLs when using internal decoder",
-            "title": "URL handling with internal decoder",
+            "description": "How to handle URLs and text when using internal decoder",
+            "title": "URL and text handling with internal decoder",
             "type": "radio",
-            "value": "resolve",
+            "value": "toLink",
             "options": [
-                {
-                    "label": "Resolve URLs",
-                    "value": "resolve"
-                },
                 {
                     "label": "Convert URLs to links",
                     "value": "toLink"
                 },
                 {
-                    "label": "Convert URLs to text",
+                    "label": "Add text in text box",
                     "value": "toText"
                 }
             ]
+        },
+        {
+            "name": "resolveURLs",
+            "description": "Whether to automatically visit URLs when the QR code begins with http/s",
+            "title": "Auto-resolve URLs",
+            "type": "bool",
+            "value": true
         }
     ]
 }

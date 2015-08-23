@@ -1,3 +1,7 @@
+# 0.6.0
+- Alter URL conversion for links to only linkify URL portions
+- Create separate option for resolving URLs; if not a single URL, other option will be used to decide whether to put text in textbox or as text+links
+
 # 0.5.1
 - Update package to work with jpm
 
