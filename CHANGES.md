@@ -1,3 +1,6 @@
+# 0.6.0
+- Add support for private window browsing
+
 # 0.5.1
 - Update package to work with jpm
 
