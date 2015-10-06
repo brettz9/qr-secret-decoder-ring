@@ -13,7 +13,7 @@ Note that MiniQR makes a public URL but conveniently converts URLs to links.
 
 # Possible to-dos
 
-1. Support image uploading
+1. Support image (including SVG) uploading
 1. Support POST
 1. Could i18n-ize errors, but would also need to modify qrcodedecode.js
 1. Add additional context menu items in place of preferences?
