@@ -1,56 +1,56 @@
-function insertError (errorMsg) { 'use strict';
-    var a = document.createElement('a'),
+'use strict';
+
+function insertError (errorMsg) {
+    const a = document.createElement('a'),
         div = document.createElement('div');
     div.style.color = 'red';
-    div.appendChild(document.createTextNode('Error decoding QR code (Decoder obtained from '));
+    div.append('Error decoding QR code (Decoder obtained from ');
     a.href = 'https://github.com/kaarposoft/qrlogo';
-    a.appendChild(document.createTextNode('QR-Logo'));
-    div.appendChild(a);
-    div.appendChild(document.createTextNode('):'));
-    div.appendChild(document.createElement('br'));
-    div.appendChild(document.createElement('br'));
-    div.appendChild(document.createTextNode(errorMsg));
-    document.body.appendChild(div);
+    a.append('QR-Logo');
+    div.append(a);
+    div.append('):');
+    div.append(document.createElement('br'));
+    div.append(document.createElement('br'));
+    div.append(errorMsg);
+    document.body.append(div);
 }
 
+const link = /\bhttps?:.*?(?=\s|$)/;
 
-var link = /\bhttps?:.*?(?=\s|$)/;
-var textStart = 0;
-function insertLink (text) { 'use strict';
-    var start = text.search(link);
-    var match = text.match(link);
+function insertLink (text) {
+    const start = text.search(link);
+    const match = text.match(link);
     if (start === -1) {
-        document.body.appendChild(document.createTextNode(text));
+        document.body.append(text);
         return;
     }
 
     if (start) {
-        document.body.appendChild(document.createTextNode(text.slice(0, start)));
+        document.body.append(text.slice(0, start));
     }
 
-    var a = document.createElement('a');
-    var linkText = match[0];
+    const a = document.createElement('a');
+    const linkText = match[0];
     a.href = linkText;
-    a.appendChild(document.createTextNode(linkText));
-    document.body.appendChild(a);
+    a.append(linkText);
+    document.body.append(a);
     insertLink(text.slice(start + match[0].length));
 }
 
-function insertText (text) { 'use strict';
-    var textarea = document.createElement('textarea');
+function insertText (text) {
+    const textarea = document.createElement('textarea');
     textarea.autofocus = true;
     textarea.style.width = '100%';
     textarea.style.height = '400px';
-    textarea.appendChild(document.createTextNode(text));
-    document.body.appendChild(textarea);
+    textarea.append(text);
+    document.body.append(textarea);
     textarea.setSelectionRange(0, textarea.value.length); // Not sure why select() is not working
 }
 
-var methods = {
-    insertError: insertError,
-    insertLink: insertLink,
-    insertText: insertText
+const methods = {
+    insertError,
+    insertLink,
+    insertText
 };
-
 
 methods[self.options.method](self.options.text);

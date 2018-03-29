@@ -1,22 +1,19 @@
-/*globals self, canvg, getImageData */
-/*jslint vars: true*/
-(function () {'use strict';
-
+/* globals self, canvg, QRCodeDecode */
+(function () {
+'use strict';
 self.port.on('imgSrc', function (imgSrc) { // imgSrc is here an SVG string
-    var canvas = document.createElement('canvas');
+    const canvas = document.createElement('canvas');
     // document.body.appendChild(canvas);
-    canvg(canvas, imgSrc, {renderCallback: function () {
-        var ctx = canvas.getContext('2d');
-        var imagedata = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        var qr = new QRCodeDecode();    
+    canvg(canvas, imgSrc, {renderCallback () {
+        const ctx = canvas.getContext('2d');
+        const imagedata = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const qr = new QRCodeDecode();
         try {
-            var decoded = qr.decodeImageData(imagedata, canvas.width, canvas.height);
+            const decoded = qr.decodeImageData(imagedata, canvas.width, canvas.height);
             self.port.emit('decodedText', decoded);
-        }
-        catch (e) {
+        } catch (e) {
             self.port.emit('decodingError', e);
-        }    
+        }
     }});
 });
-
 }());

@@ -1,15 +1,35 @@
 {
     "name": "qr-secret-decoder-ring",
-    "title": "QR Secret Decoder Ring",
-    "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack",
-    "version": "0.7.0",
-    "permissions": {
-        "private-browsing": true
-    },
-    "main": "lib/main",
+    "version": "0.8.0",
     "license": "MIT",
     "author": "Brett Zamir",
     "contributors": [],
+    "scripts": {
+        "webext-path": "npm run eslint && web-ext run --browser-console -f /Applications/Firefox.app",
+        "webext": "npm run eslint && web-ext run --browser-console -f firefox",
+        "webext-default": "npm run eslint && web-ext run --browser-console",
+        "webext-beta": "npm run eslint && web-ext run --browser-console -f beta",
+        "webext-nightly": "npm run eslint && web-ext run --browser-console -f nightly",
+        "webext-dev": "npm run eslint && web-ext run --browser-console -f firefoxdeveloperedition",
+        "webext-build": "npm run eslint && web-ext build",
+        "eslint": "eslint .",
+        "copy-jamilih": "cp node_modules/jamilih/dist/jml-es-noinnerh.js options/jml.js",
+        "copy-polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js polyfills/browser-polyfill.min.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "5.3.0",
+        "eslint-config-standard": "11.0.0",
+        "eslint-plugin-import": "2.13.0",
+        "eslint-plugin-node": "7.0.1",
+        "eslint-plugin-promise": "3.8.0",
+        "eslint-plugin-standard": "3.1.0",
+        "jamilih": "0.35.0",
+        "webextension-polyfill": "^0.3.0"
+    },
+    "engines": {},
+    "homepage": "https://github.com/brettz9/qr-secret-decoder-ring",
+    "bugs": "https://github.com/brettz9/qr-secret-decoder-ring/issues",
     "repository": {
         "type": "git",
         "url": "https://github.com/brettz9/qr-secret-decoder-ring.git"
@@ -17,52 +37,5 @@
     "description": "Right click an image or canvas (e.g., from https://www.the-qrcode-generator.com/ ) containing a QR code to decode. Allows internal decoding (using QR-Logo) or the choice of the ZXing and MiniQR websites for handling the decoding. MiniQR makes a public URL but conveniently converts URLs to links.",
     "keywords": [
         "QR"
-    ],
-    "preferences": [
-        {
-            "description": "The site to handle QR Code decoding of right-clicked images or canvases. Note that MiniQR creates a public URL for your submitted QR.",
-            "name": "decoderSite",
-            "options": [
-                {
-                    "label": "QR Secret Decoder Ring Internal Decoder",
-                    "value": "internal"
-                },
-                {
-                    "label": "MiniQR",
-                    "value": "http://miniqr.com/api/read.php?url="
-                },
-                {
-                    "label": "ZXing",
-                    "value": "http://zxing.org/w/decode?u="
-                }
-            ],
-            "title": "Decoder Site",
-            "type": "radio",
-            "value": "internal"
-        },
-        {
-            "name": "URLHandling",
-            "description": "How to handle URLs and text when using internal decoder",
-            "title": "URL and text handling with internal decoder",
-            "type": "radio",
-            "value": "toLink",
-            "options": [
-                {
-                    "label": "Convert URLs to links",
-                    "value": "toLink"
-                },
-                {
-                    "label": "Add text in text box",
-                    "value": "toText"
-                }
-            ]
-        },
-        {
-            "name": "resolveURLs",
-            "description": "Whether to automatically visit URLs when the QR code begins with http/s",
-            "title": "Auto-resolve URLs",
-            "type": "bool",
-            "value": true
-        }
     ]
 }

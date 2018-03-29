@@ -1,4 +1,4 @@
-/* ************************************************************ 
+/* ************************************************************
 
    QR-Logo: http://qrlogo.kaarposoft.dk
 
@@ -108,7 +108,7 @@ QRCodeDecode.prototype = {
 	/** Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1 */
 	ERROR_CORRECTION_LEVEL: {
 		L: 1,	//  7%
-		M: 0,	// 15%  
+		M: 0,	// 15%
 		Q: 3,	// 25%
 		H: 2	// 30%
 	},
@@ -478,7 +478,7 @@ QRCodeDecode.prototype = {
 			var i;
 			for (i = 0; i < n; i++) {
 				var ch = text[i].charCodeAt()-48;
-				if ( (ch<0) || (ch>9) ) { 
+				if ( (ch<0) || (ch>9) ) {
 					throw ("Invalid character for Numeric encoding [" + text[i] + "]");
 				}
 				num.push(ch);
@@ -610,7 +610,7 @@ QRCodeDecode.prototype = {
 							n_light[rc] = 0;
 							n_dark[rc]++;
 						} else {
-							if (n_dark[rc] > 5) { p += (3+n_dark[rc]-5); } 
+							if (n_dark[rc] > 5) { p += (3+n_dark[rc]-5); }
 							n_light[rc]++;
 							n_dark[rc] = 0;
 						}
@@ -644,7 +644,7 @@ QRCodeDecode.prototype = {
 
 		/* ************************************************************ */
 		function binFormat(b) {
-			return ("00000000000000" + b.toString(2)).slice(-15);			
+			return ("00000000000000" + b.toString(2)).slice(-15);
 		}
 
 		/* ************************************************************ */
@@ -795,7 +795,7 @@ QRCodeDecode.prototype = {
 			for (y = 0; y < 6; y++) {
 				var x;
 				for (x = qr.n_modules-11; x < qr.n_modules-11+3; x++) {
-					if (pattern & 1) { qr.pixels[x][y]=true;	 } 
+					if (pattern & 1) { qr.pixels[x][y]=true;	 }
 					pattern /= 2;
 				}
 			}
@@ -824,7 +824,7 @@ QRCodeDecode.prototype = {
 					qr.pixels[6][i]=true;
 				}
 			}
-			
+
 		}
 
 		/* ************************************************************ */
@@ -851,7 +851,7 @@ QRCodeDecode.prototype = {
 				var j;
 				for (j = 0; j < n; j++) {
 					if ( ((i===0)&&(j===0)) || ((i===0)&&(j===n-1)) || ((i===n-1)&&(j===0)) ) { continue; }
-					encodeOneAlignmentPattern(qr, qr.alignment_patterns[qr.version][i]-2, qr.alignment_patterns[qr.version][j]-2); 
+					encodeOneAlignmentPattern(qr, qr.alignment_patterns[qr.version][i]-2, qr.alignment_patterns[qr.version][j]-2);
 				}
 			}
 		}
@@ -1060,11 +1060,11 @@ QRCodeDecode.prototype = {
 
 		if ( (this.image_right-this.image_left+1<21) || (this.image_bottom-this.image_top+1<21) ) {
 			throw ("Found no image data to decode");
-		}	
+		}
 
 		if ( Math.abs( (this.image_right-this.image_left) - (this.image_bottom-this.image_top) ) > skew_limit ) {
 			throw ("Image data is not rectangular");
-		}	
+		}
 
 		this.image_size = ( (this.image_right-this.image_left+1) + (this.image_bottom-this.image_top+1) ) / 2.0;
 		if (this.logger) {
@@ -1106,7 +1106,7 @@ QRCodeDecode.prototype = {
 				}
 			}
 
-			// quiet area 
+			// quiet area
 			for (i = 0; i <= 6; i++) {
 				if (!qr.isDarkWithSize(x+quiet_x, y+i, module_size)) { n = n+1; }
 				if (!qr.isDarkWithSize(x+i, y+quiet_y, module_size)) { n = n+1; }
@@ -1196,7 +1196,7 @@ QRCodeDecode.prototype = {
 			for (i = 0; i < n; i++) {
 				for (j = 0; j < n; j++) {
 					if ( ((i===0)&&(j===0)) || ((i===0)&&(j===n-1)) || ((i===n-1)&&(j===0)) ) { continue; }
-					var na = matchOneAlignmentPattern(qr, qr.alignment_patterns[version][i]-2, qr.alignment_patterns[version][j]-2, module_size); 
+					var na = matchOneAlignmentPattern(qr, qr.alignment_patterns[version][i]-2, qr.alignment_patterns[version][j]-2, module_size);
 					if (na > 24) { a++; }
 				}
 			}
@@ -1493,7 +1493,7 @@ QRCodeDecode.prototype = {
 
 
 		/* **************************************************
-		 * findModuleSize 
+		 * findModuleSize
 		 */
 
 		var best_match_so_far = [0, 0];
@@ -1641,7 +1641,7 @@ QRCodeDecode.prototype = {
 			var mask = (1 << len) - 1;
 			var byteIndex = pos >>> 3;
 
-			return ((	(bytes[byteIndex] << 16) | 
+			return ((	(bytes[byteIndex] << 16) |
 					(bytes[++byteIndex]  <<  8) |
 					bytes[++byteIndex]
 				) >> shift) & mask;
@@ -1737,7 +1737,7 @@ QRCodeDecode.prototype = {
 		}
 
 		/* **************************************************
-		 * extractData 
+		 * extractData
 		 */
 
 		var bytes = this.bytes;
@@ -1769,7 +1769,7 @@ QRCodeDecode.prototype = {
 			else if (mode === this.MODE.EightBit) { this.data += extract8bit(this, bytes); }
 			else if (mode === this.MODE.Numeric) { this.data += extractNumeric(this, bytes); }
 			else { throw ("Unsupported ECI mode: " + mode); }
-		}	
+		}
 
 		if (this.debug_extractData) {
 			if (this.logger) {
@@ -2000,7 +2000,7 @@ QRCodeDecode.prototype = {
 				for (j = 0; j < n; j++) {
 					if ( ((i===0)&&(j===0)) || ((i===0)&&(j===n-1)) || ((i===n-1)&&(j===0)) ) { continue; }
 
-					markSquare(qr, 
+					markSquare(qr,
 						qr.alignment_patterns[qr.version][i]-2,
 						qr.alignment_patterns[qr.version][j]-2,
 						5, 5);
@@ -2047,7 +2047,7 @@ QRCodeDecode.prototype = {
 					for (x = 0; x < this.n_modules; x++) {
 						s += this.functional_pattern[x][y] ? "X" : "O";
 					}
-				this.logger.debug(s);		
+				this.logger.debug(s);
 				}
 			}
 		}
@@ -2082,7 +2082,7 @@ QRCodeDecode.prototype = {
 	hammingDistance: function (a, b) {
 
 		function nBits(n) {
-			var c;   
+			var c;
 			for (c = 0; n; c++) {
 				n &= n - 1; // clear the least significant bit set
 			}

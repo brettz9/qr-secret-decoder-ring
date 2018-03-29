@@ -1,8 +1,0 @@
-*.xpi
-*.lnk
-*.bat
-*.git
-.jpmignore
-.gitignore
-test
-doc

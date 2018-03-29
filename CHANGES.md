@@ -1,9 +1,16 @@
+# 0.8.0
+- Enhancement/Update: Move to webextensions
+- Refactoring: Use more up-to-date APIs, ES6
+- Linting: ESLint, `.remarkrc` for Markdown
+
 # 0.7.0
 - Add support for private window browsing
 
 # 0.6.0
 - Alter URL conversion for links to only linkify URL portions
-- Create separate option for resolving URLs; if not a single URL, other option will be used to decide whether to put text in textbox or as text+links
+- Create separate option for resolving URLs; if not a single URL,
+    other option will be used to decide whether to put text in
+    textbox or as text+links
 
 # 0.5.1
 - Update package to work with jpm
@@ -22,8 +29,10 @@
 - Support link creation for internal decoding
 
 # 0.2.0
-- Support [QR-Logo](https://github.com/kaarposoft/qrlogo)-based decoding internally with optional URL resolution and error reporting
-- Support decoding of canvas-based QR codes (e.g., as produced by https://www.the-qrcode-generator.com/ )
+- Support [QR-Logo](https://github.com/kaarposoft/qrlogo)-based
+    decoding internally with optional URL resolution and error reporting
+- Support decoding of canvas-based QR codes (e.g., as produced by
+    <https://www.the-qrcode-generator.com/>)
 
 # 0.1.0
 - Internationalize and update XPI to 1.16
