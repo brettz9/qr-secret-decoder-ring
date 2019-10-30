@@ -1,0 +1,6 @@
+extraction:
+  javascript:
+    index:
+      filters:
+        - exclude: "data/canvg"
+        - exclude: "data/qrlogo"

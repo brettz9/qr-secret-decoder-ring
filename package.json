@@ -3,7 +3,9 @@
     "title": "QR Secret Decoder Ring",
     "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack",
     "version": "0.7.0",
-    "permissions": {"private-browsing": true},
+    "permissions": {
+        "private-browsing": true
+    },
     "main": "lib/main",
     "license": "MIT",
     "author": "Brett Zamir",
@@ -19,23 +21,23 @@
     "preferences": [
         {
             "description": "The site to handle QR Code decoding of right-clicked images or canvases. Note that MiniQR creates a public URL for your submitted QR.",
-            "name": "decoderSite", 
+            "name": "decoderSite",
             "options": [
                 {
                     "label": "QR Secret Decoder Ring Internal Decoder",
                     "value": "internal"
                 },
                 {
-                    "label": "MiniQR", 
+                    "label": "MiniQR",
                     "value": "http://miniqr.com/api/read.php?url="
-                }, 
+                },
                 {
-                    "label": "ZXing", 
+                    "label": "ZXing",
                     "value": "http://zxing.org/w/decode?u="
                 }
-            ], 
-            "title": "Decoder Site", 
-            "type": "radio", 
+            ],
+            "title": "Decoder Site",
+            "type": "radio",
             "value": "internal"
         },
         {

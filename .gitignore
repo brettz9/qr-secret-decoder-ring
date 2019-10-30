@@ -1,2 +1,3 @@
 *.lnk
 *.bat
+node_modules
