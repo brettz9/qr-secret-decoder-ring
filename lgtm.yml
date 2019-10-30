@@ -1,6 +1,8 @@
 extraction:
   javascript:
-    index:
-      filters:
-        - exclude: "data/canvg"
-        - exclude: "data/qrlogo"
+  index:
+    filters:
+    - exclude: "data/canvg"
+    - exclude: "data/qrlogo"
+    - exclude: "options/jml.js"
+    - exclude: "polyfills/browser-polyfill.min.js"

@@ -11,24 +11,24 @@
   "permissions": ["contextMenus", "storage"],
 
   "background": {
-    "scripts": ["polyfills/browser-polyfill.min.js", "lib/background.js"]
+  "scripts": ["polyfills/browser-polyfill.min.js", "lib/background.js"]
   },
   "options_ui": {
-    "page": "options/options.html",
-    "browser_style": true,
-    "chrome_style": true,
-    "open_in_tab": false
+  "page": "options/options.html",
+  "browser_style": true,
+  "chrome_style": true,
+  "open_in_tab": false
   },
 
   "icons": {
-    "128": "icon.png"
+  "128": "icon.png"
   },
 
   "default_locale": "en",
 
   "applications": {
-    "gecko": {
-      "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack"
-    }
+  "gecko": {
+    "id": "jid0-P1mVozMDmRBfUBi7YQaBXqktLCM@jetpack"
+  }
   }
 }

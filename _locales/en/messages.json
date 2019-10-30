@@ -1,47 +1,47 @@
 {
-    "extensionName": {
-      "message": "QR Secret Decoder Ring"
-    },
-    "extensionShortName": {
-      "message": "QR Decoder"
-    },
-    "extensionDescription": {
-      "message": "Right click to decode an image or canvas containing a QR code. Allows internal decoding or ZXing/MiniQR websites."
-    },
-    "Decode_QR_Code_image": {
-      "message": "Decode QR Code image"
-    },
-    "decoderSite_title": {
-      "message": "Decoder Site"
-    },
-    "decoderSite_description": {
-      "message": "The site to handle QR Code decoding of right-clicked images or canvases. Note that MiniQR creates a public URL for your submitted QR."
-    },
-    "decoderSite_options.QR Secret Decoder Ring Internal Converter": {
-      "message": "QR Secret Decoder Ring Internal Decoder"
-    },
-    "decoderSite_options.MiniQR": {
-      "message": "MiniQR"
-    },
-    "decoderSite_options.ZXing": {
-      "message": "ZXing"
-    },
-    "URLHandling_title": {
-      "message": "URL and text handling with internal decoder"
-    },
-    "URLHandling_description": {
-      "message": "How to handle URLs and text when using internal decoder"
-    },
-    "URLHandling_options.Convert URLs to links": {
-      "message": "Convert URLs to links"
-    },
-    "URLHandling_options.Add text in text box": {
-      "message": "Add text in text box"
-    },
-    "resolveURLs_title": {
-      "message": "Auto-resolve URLs"
-    },
-    "resolveURLs_description": {
-      "message": "Whether to automatically visit URLs when the QR code begins with http/s"
-    }
+  "extensionName": {
+    "message": "QR Secret Decoder Ring"
+  },
+  "extensionShortName": {
+    "message": "QR Decoder"
+  },
+  "extensionDescription": {
+    "message": "Right click to decode an image or canvas containing a QR code. Allows internal decoding or ZXing/MiniQR websites."
+  },
+  "Decode_QR_Code_image": {
+    "message": "Decode QR Code image"
+  },
+  "decoderSite_title": {
+    "message": "Decoder Site"
+  },
+  "decoderSite_description": {
+    "message": "The site to handle QR Code decoding of right-clicked images or canvases. Note that MiniQR creates a public URL for your submitted QR."
+  },
+  "decoderSite_options.QR Secret Decoder Ring Internal Converter": {
+    "message": "QR Secret Decoder Ring Internal Decoder"
+  },
+  "decoderSite_options.MiniQR": {
+    "message": "MiniQR"
+  },
+  "decoderSite_options.ZXing": {
+    "message": "ZXing"
+  },
+  "URLHandling_title": {
+    "message": "URL and text handling with internal decoder"
+  },
+  "URLHandling_description": {
+    "message": "How to handle URLs and text when using internal decoder"
+  },
+  "URLHandling_options.Convert URLs to links": {
+    "message": "Convert URLs to links"
+  },
+  "URLHandling_options.Add text in text box": {
+    "message": "Add text in text box"
+  },
+  "resolveURLs_title": {
+    "message": "Auto-resolve URLs"
+  },
+  "resolveURLs_description": {
+    "message": "Whether to automatically visit URLs when the QR code begins with http/s"
+  }
 }

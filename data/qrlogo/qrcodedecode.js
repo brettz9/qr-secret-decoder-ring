@@ -8,7 +8,7 @@
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+   http://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
@@ -121,14 +121,14 @@ QRCodeDecode.prototype = {
 
 	/**  Encode a text into a QR Code in a canvas
 	 *
-	 * @param mode          Mode according to ISO/IEC 18004:2006(E) Section 6.3
-	 * @param text          The text to be encoded
-	 * @param version       Version according to ISO/IEC 18004:2006(E) Section 5.3.1
-	 * @param ec_level      Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1
+	 * @param mode      Mode according to ISO/IEC 18004:2006(E) Section 6.3
+	 * @param text      The text to be encoded
+	 * @param version     Version according to ISO/IEC 18004:2006(E) Section 5.3.1
+	 * @param ec_level    Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1
 	 * @param module_size   Number of pixels per module
-	 * @param canvas        The canvas to encode into
-	 * @param bg_rgb        Array [r, g, b] where 0<=color<=255
-	 * @param module_rgb    Array [r, g, b] where 0<=color<=255
+	 * @param canvas    The canvas to encode into
+	 * @param bg_rgb    Array [r, g, b] where 0<=color<=255
+	 * @param module_rgb  Array [r, g, b] where 0<=color<=255
 	 */
 	encodeToCanvas: function (mode, text, version, ec_level, module_size, canvas, bg_rgb, module_rgb) {
 
@@ -156,8 +156,8 @@ QRCodeDecode.prototype = {
 	/*  ************************************************************ */
 	/** Encode text into a QR Code in a pixel array
 	 *
-	 *  @param mode      Mode according to ISO/IEC 18004:2006(E) Section 6.3
-	 *  @param text      The text to be encoded
+	 *  @param mode    Mode according to ISO/IEC 18004:2006(E) Section 6.3
+	 *  @param text    The text to be encoded
 	 *  @param version   Version according to ISO/IEC 18004:2006(E) Section 5.3.1
 	 *  @param ec_level  Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1
 	 */
@@ -212,10 +212,10 @@ QRCodeDecode.prototype = {
 	/*  ************************************************************ */
 	/** Prepare for encoding text to QR Code
 	 *
-	 *  @param version       Version according to ISO/IEC 18004:2006(E) Section 5.3.1
-	 *  @param ec_level      Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1
+	 *  @param version     Version according to ISO/IEC 18004:2006(E) Section 5.3.1
+	 *  @param ec_level    Error correction level according to ISO/IEC 18004:2006(E) Section 6.5.1
 	 *  @param module_size   Number of pixels per module
-	 *  @param canvas        Canvas or pixel array
+	 *  @param canvas    Canvas or pixel array
 	 */
 	encodeInit: function (version, ec_level, module_size, canvas) {
 
@@ -281,7 +281,7 @@ QRCodeDecode.prototype = {
 	/*  ************************************************************ */
 	/** Decode image data as QR Code
 	 *
-	 *  @param image_data    The image data (canvas.getContext('2d').getImageData, pixel array or similar)
+	 *  @param image_data  The image data (canvas.getContext('2d').getImageData, pixel array or similar)
 	 *  @param image_width   The pixel width of the image
 	 *  @param image_height  The pixel height of the image
 	 */
@@ -294,13 +294,13 @@ QRCodeDecode.prototype = {
 	/*  ************************************************************ */
 	/** Decode image data as QR Code
 	 *
-	 *  @param image_data    The image data (canvas.getContext('2d').getImageData, pixel array or similar)
+	 *  @param image_data  The image data (canvas.getContext('2d').getImageData, pixel array or similar)
 	 *  @param image_width   The pixel width of the image
 	 *  @param image_height  The pixel height of the image
-	 *  @param left          Leftmost pixel of image
-	 *  @param right         Rightmost pixel of image
-	 *  @param top           Top pixel of image
-	 *  @param bottom        Bottom pixel of image
+	 *  @param left      Leftmost pixel of image
+	 *  @param right     Rightmost pixel of image
+	 *  @param top       Top pixel of image
+	 *  @param bottom    Bottom pixel of image
 	 *  @param max_version   Do not try to decode with version higher than this
 	 */
 	decodeImageDataInsideBordersWithMaxVersion: function (image_data, image_width, image_height, left, right, top, bottom, max_version) {
@@ -318,7 +318,7 @@ QRCodeDecode.prototype = {
 	/*  ************************************************************ */
 	/** Set image data in preparation for decoding QR Code
 	 *
-	 *  @param image_data    The image data (canvas.getContext('2d').getImageData, pixel array or similar)
+	 *  @param image_data  The image data (canvas.getContext('2d').getImageData, pixel array or similar)
 	 *  @param image_width   The pixel width of the image
 	 *  @param image_height  The pixel height of the image
 	 */
@@ -654,7 +654,7 @@ QRCodeDecode.prototype = {
 			var bad = ( 128-1 - 2 - 32 ) << 4;	// 4_ : 1D : 1L : 3D : 1L : 1D : 4x
 			var badmask1 = 2048 - 1 ;		// 4_ : 1D : 1L : 3D : 1L : 1D : 4L
 			var badmask2 = badmask1 << 4;		// 4L : 1D : 1L : 3D : 1L : 1D : 4_
-			var patmask = 32768 - 1;		// 4  +           7            + 4
+			var patmask = 32768 - 1;		// 4  +       7      + 4
 			var i;
 			for (i = 0; i < qr.n_modules-1; i++) {
 				var pat = [0, 0];
@@ -836,7 +836,7 @@ QRCodeDecode.prototype = {
 				qr.pixels[x+i][  y] = true;
 				qr.pixels[x+4][  y+i] = true;
 				qr.pixels[x+4-i][y+4] = true;
-				qr.pixels[x][    y+4-i] = true;
+				qr.pixels[x][  y+4-i] = true;
 			}
 
 			// center black
@@ -1168,10 +1168,10 @@ QRCodeDecode.prototype = {
 
 			// Outer 5x5 black boundary
 			for (i = 0; i <= 3; i++) {
-				if (qr.isDarkWithSize(x+i,   y,     module_size)) { n = n+1; }
+				if (qr.isDarkWithSize(x+i,   y,   module_size)) { n = n+1; }
 				if (qr.isDarkWithSize(x+4,   y+i,   module_size)) { n = n+1; }
 				if (qr.isDarkWithSize(x+4-i, y+4,   module_size)) { n = n+1; }
-				if (qr.isDarkWithSize(x,     y+4-i, module_size)) { n = n+1; }
+				if (qr.isDarkWithSize(x,   y+4-i, module_size)) { n = n+1; }
 			}
 
 			// Intermediate 3*3 white
@@ -1333,15 +1333,15 @@ QRCodeDecode.prototype = {
 			var n_modules = qr.nModulesFromVersion(version);
 			var module_size = qr.image_size/n_modules;
 			var finder_pattern = [0, 0, 0];
-			finder_pattern[0] = matchFinderPattern(qr, 0,           0,           7,	7, module_size);
+			finder_pattern[0] = matchFinderPattern(qr, 0,       0,       7,	7, module_size);
 			if (finder_pattern[0]<64-3) {
 				return [version, 0]; // performance hack!
 			}
-			finder_pattern[1] = matchFinderPattern(qr, 0,           n_modules-7, 7,	-1, module_size);
+			finder_pattern[1] = matchFinderPattern(qr, 0,       n_modules-7, 7,	-1, module_size);
 			if (finder_pattern[0]+finder_pattern[1]<64+64-3) {
 				return [version, 0]; // performance hack!
 			}
-			finder_pattern[2] = matchFinderPattern(qr, n_modules-7, 0,           -1,	7, module_size);
+			finder_pattern[2] = matchFinderPattern(qr, n_modules-7, 0,       -1,	7, module_size);
 			if (qr.debug_findModuleSize) {
 				if (qr.logger) {
 					qr.logger.debug("matchVersion version=" + version +
